@@ -191,8 +191,33 @@
                       </h2>
                     </div>
                     <div class="cf_btn has_fade_anim" data-fade-from="top" data-delay="1" data-ease="bounce">
-                      <a href="#" class="btn-hover-mask" data-text="Unavailable">View My Works</a>
+                      <a id="modal-btn" class="btn-hover-mask" >View My Work</a>
+                      <dialog style="padding: 30px; background-color: transparent; border: transparent;">
+                        <p>Unavailable this time.</p>
+                        <br/><br/>
+                        <a id="close-btn" style="border: gray solid 2px; margin-left: 10px;">close</a>
+                      </dialog>
                     </div>
+                    <style>
+                      #close-btn:hover{
+                        background-color: gray;
+                      }
+                    </style>
+                    <script>
+                      const modalBtn = document.querySelector('#modal-btn');
+                      const closeBtn = document.querySelector('#close-btn');
+                      const dialog = document.querySelector('dialog');
+
+                      modalBtn.addEventListener('click',() => {
+                        dialog.show();
+                      })
+                      modalBtn.addEventListener('click',() => {
+                        dialog.showModal();
+                      })
+                      closeBtn.addEventListener('click',() => {
+                        dialog.close();
+                      })
+                    </script>
                     
                   </div>
                 </div>
